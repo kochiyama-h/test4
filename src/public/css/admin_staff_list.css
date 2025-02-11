@@ -1,0 +1,142 @@
+/* Base Styles */
+.staff-container {
+  max-width: 1230px;
+  margin: 40px auto;
+  padding: 40px 20px;
+  
+}
+
+.page-title { 
+  padding-left: 30px;
+}
+
+
+
+/* Table Styles */
+.staff-table-wrapper {
+  background: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.staff-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.staff-table th,
+.staff-table td {
+  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.staff-table th {
+  font-weight: normal;
+  background-color: #fff;
+}
+
+/* Column Widths */
+.staff-table th:nth-child(1),
+.staff-table td:nth-child(1) {
+  width: 25%;
+}
+
+.staff-table th:nth-child(2),
+.staff-table td:nth-child(2) {
+  width: 55%;
+}
+
+.staff-table th:nth-child(3),
+.staff-table td:nth-child(3) {
+  width: 20%;
+}
+
+.detail-link {
+  color: #0c0c0c;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.detail-link:hover {
+  color: #4a2e2e;
+}
+
+/* タブレット (768-850px) */
+@media screen and (min-width: 768px) and (max-width: 850px) {
+  .staff-container {
+      max-width: 850px;
+      margin: 30px auto;
+      padding: 0 15px;
+  }
+
+  .page-title {
+      font-size: 22px;
+      margin-bottom: 25px;
+  }
+
+  .staff-table th,
+  .staff-table td {
+      padding: 15px;
+      font-size: 14px;
+  }
+
+  /* Adjust column widths for tablet */
+  .staff-table th:nth-child(1),
+  .staff-table td:nth-child(1) {
+      width: 30%;
+  }
+
+  .staff-table th:nth-child(2),
+  .staff-table td:nth-child(2) {
+      width: 50%;
+  }
+
+  .staff-table th:nth-child(3),
+  .staff-table td:nth-child(3) {
+      width: 20%;
+  }
+}
+
+/* PC (1400-1540px) */
+@media screen and (min-width: 1400px) and (max-width: 1540px) {
+  .staff-container {
+      max-width: 1400px;
+      margin: 50px auto;
+      padding: 0 30px;
+  }
+
+  .page-title {
+      font-size: 28px;
+      margin-bottom: 40px;
+  }
+
+  .page-title::before {
+      width: 8px;
+      height: 28px;
+  }
+
+  .staff-table th,
+  .staff-table td {
+      padding: 25px;
+      font-size: 16px;
+  }
+
+  /* Adjust column widths for PC */
+  .staff-table th:nth-child(1),
+  .staff-table td:nth-child(1) {
+      width: 25%;
+  }
+
+  .staff-table th:nth-child(2),
+  .staff-table td:nth-child(2) {
+      width: 55%;
+  }
+
+  .staff-table th:nth-child(3),
+  .staff-table td:nth-child(3) {
+      width: 20%;
+  }
+}

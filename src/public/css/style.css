@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+header {
+  background-color: #000;
+  padding: 15px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: none;
+}
+
+.nav-menu button{
+  background-color: #000;
+  color: #fff;
+  border: none;
+  font-size: 14px;
+}
+
+.hamburger {
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+main {
+  max-width: 100%;
+  margin: 80px auto 40px;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  border-left: 5px solid #000;
+  padding-left: 15px;
+}
+
+.attendance-detail {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.detail-row {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #eee;
+}
+
+.detail-label {
+  width: 100%;
+  padding: 15px;
+  background: #f9f9f9;
+  font-weight: bold;
+}
+
+.detail-content {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.time-separator {
+  margin: 0 10px;
+}
+
+.approval-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-approved {
+  background: #666;
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: not-allowed;
+  font-size: 16px;
+  width: 100%;
+}
+
+/* タブレット (768-850px) */
+@media screen and (min-width: 768px) {
+  .nav-menu {
+      display: flex;
+      gap: 20px;
+  }
+
+  .nav-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+  }
+
+  .hamburger {
+      display: none;
+  }
+
+  main {
+      max-width: 720px;
+      margin: 100px auto 40px;
+  }
+
+  .detail-row {
+      flex-direction: row;
+  }
+
+  .detail-label {
+      width: 30%;
+  }
+
+  .detail-content {
+      width: 70%;
+  }
+
+  .approval-button {
+      text-align: right;
+  }
+
+  .btn-approved {
+      width: auto;
+  }
+}
+
+/* PC (1400-1540px) */
+@media screen and (min-width: 1400px) {
+  .header-content {
+      max-width: 1400px;
+  }
+
+  main {
+      max-width: 1000px;
+  }
+
+  .nav-menu {
+      gap: 30px;
+  }
+
+  .nav-menu a {
+      font-size: 16px;
+  }
+
+  h1 {
+      font-size: 28px;
+  }
+
+  .detail-label,
+  .detail-content {
+      padding: 20px;
+      font-size: 16px;
+  }
+
+  .btn-approved {
+      font-size: 18px;
+      padding: 15px 40px;
+  }
+}

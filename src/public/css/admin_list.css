@@ -1,0 +1,133 @@
+/* 基本スタイル */
+.attendance-list-container {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.date-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; 
+  margin: 20px 0;
+}
+
+.date-navigation a{
+  text-decoration: none;
+  color: #545353;
+}
+
+.attendance-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.attendance-table {
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  border-collapse: collapse;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.attendance-table th{
+  font-weight: lighter;
+  border-bottom: 2px solid #b4b3b3;
+  padding: 1rem;
+  text-align: left;
+  white-space: nowrap; /* テキストの折り返しを防ぐ */
+}
+
+
+.attendance-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e5e5;
+  white-space: nowrap; /* テキストの折り返しを防ぐ */
+}
+
+/* 日付表示 */
+.current-date {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.current-date::before {
+  content: "📅";
+  font-size: 1.2rem;
+}
+
+/* テーブルのカラム幅を固定 */
+.attendance-table th:nth-child(1) { min-width: 150px; } /* 名前 */
+.attendance-table th:nth-child(2) { min-width: 100px; } /* 出勤 */
+.attendance-table th:nth-child(3) { min-width: 100px; } /* 退勤 */
+.attendance-table th:nth-child(4) { min-width: 100px; } /* 休憩 */
+.attendance-table th:nth-child(5) { min-width: 100px; } /* 合計 */
+.attendance-table th:nth-child(6) { min-width: 80px; } /* 詳細 */
+
+.detail-link {
+  color: #0c0c0c;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.detail-link:hover {
+  color: #4a2e2e;
+}
+
+/* PC (1400-1540px) */
+@media screen and (min-width: 1400px) and (max-width: 1540px) {
+  .attendance-list-container {
+    max-width: 1200px;
+    padding: 2rem 1.5rem;
+  }
+
+  .attendance-table th,
+  .attendance-table td {
+    padding: 1rem 0.8rem;
+  }
+}
+
+/* Tablet (768-850px) */
+@media screen and (min-width: 768px) and (max-width: 850px) {
+  .attendance-list-container {
+    max-width: 100%;
+    padding: 1.5rem 1rem;
+  }
+
+  .attendance-table th,
+  .attendance-table td {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .current-date {
+    font-size: 1rem;
+    margin: 0 1rem;
+  }
+
+  /* ナビゲーションボタンのサイズ調整 */
+  .nav-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* 共通のレスポンシブ調整 */
+@media screen and (max-width: 850px) {
+  .date-navigation {
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .list-title {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+}

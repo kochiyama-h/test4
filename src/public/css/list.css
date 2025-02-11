@@ -1,0 +1,149 @@
+.attendance-list-container {
+  max-width: 1230px;
+  margin: 40px auto;
+  padding: 30px 20px;
+  
+  
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  position: relative;
+  padding-left: 20px;
+  
+}
+
+.page-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 24px;
+  background-color: #000;
+}
+
+/* Month Selector */
+.month-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.month-nav {
+  color: #000;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.current-month {
+  font-size: 16px;
+  margin: 0 20px;
+  min-width: 100px;
+  text-align: center;
+}
+
+.current-month::before {
+  content: "📅";
+  font-size: 1.2rem;
+}
+
+/* Table Styles */
+.attendance-table-wrapper {
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.attendance-table th {
+  background: #fff;
+  padding: 15px;
+  text-align: center;
+  font-weight: normal;
+  border-bottom: 1px solid #ddd;
+}
+
+.attendance-table td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.detail-link {
+  color: #0c0c0c;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.detail-link:hover {
+  color: #4a2e2e;
+}
+
+/* タブレット (768-850px) */
+@media screen and (min-width: 768px) and (max-width: 850px) {
+  .attendance-list-container {
+      margin: 30px auto;
+  }
+
+  .page-title {
+      font-size: 22px;
+      margin-bottom: 25px;
+  }
+
+  .month-selector {
+      margin-bottom: 25px;
+  }
+
+  .attendance-table th,
+  .attendance-table td {
+      padding: 12px;
+      font-size: 14px;
+  }
+}
+
+/* PC (1400-1540px) */
+@media screen and (min-width: 1400px) and (max-width: 1540px) {
+  .attendance-list-container {
+      max-width: 1400px;
+      margin: 50px auto;
+  }
+
+  .page-title {
+      font-size: 28px;
+      margin-bottom: 40px;
+  }
+
+  .page-title::before {
+      width: 8px;
+      height: 28px;
+  }
+
+  .month-selector {
+      margin-bottom: 40px;
+      padding: 20px;
+  }
+
+  .current-month {
+      font-size: 18px;
+      margin: 0 30px;
+  }
+
+  .attendance-table th,
+  .attendance-table td {
+      padding: 20px;
+      font-size: 16px;
+  }
+}

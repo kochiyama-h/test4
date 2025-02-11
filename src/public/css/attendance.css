@@ -1,0 +1,134 @@
+.attendance-container {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
+.attendance-content {
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.status-badge {
+  display: inline-block;
+  background-color: #e2e2e2;
+  color: #000;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
+.date {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.time {
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.button-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.attendance-form {
+  display: inline-block;
+}
+
+.button {
+  padding: 15px 40px;
+  font-size: 16px;
+  border-radius: 999px;
+  border: 1px solid #000;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  min-width: 120px;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.button-black {
+  background-color: #000;
+  color: #fff;
+}
+
+.button-white {
+  background-color: #fff;
+  color: #000;
+}
+
+.completion-message {
+  font-size: 18px;
+  color: #333;
+}
+
+/* タブレット (768-850px) */
+@media screen and (min-width: 768px) and (max-width: 850px) {
+  .attendance-content {
+      max-width: 700px;
+  }
+
+  .status-badge {
+      font-size: 16px;
+      margin-bottom: 50px;
+  }
+
+  .date {
+      font-size: 28px;
+      margin-bottom: 30px;
+  }
+
+  .time {
+      font-size: 72px;
+      margin-bottom: 50px;
+  }
+
+  .button {
+      padding: 18px 50px;
+      font-size: 18px;
+      min-width: 140px;
+  }
+}
+
+/* PC (1400-1540px) */
+@media screen and (min-width: 1400px) and (max-width: 1540px) {
+  .attendance-content {
+      max-width: 800px;
+  }
+
+  .status-badge {
+      font-size: 18px;
+      margin-bottom: 60px;
+  }
+
+  .date {
+      font-size: 32px;
+      margin-bottom: 40px;
+  }
+
+  .time {
+      font-size: 96px;
+      margin-bottom: 60px;
+  }
+
+  .button {
+      padding: 20px 60px;
+      font-size: 20px;
+      min-width: 160px;
+  }
+
+  .completion-message {
+      font-size: 24px;
+  }
+}

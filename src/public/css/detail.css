@@ -1,0 +1,166 @@
+.attendance-detail-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 40px 20px;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.page-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 24px;
+  background-color: #000;
+}
+
+.detail-content {
+  background: #fff;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;  
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  background-color: #fff;
+}
+
+.detail-label {
+  width: 150px;  
+  font-weight: normal;
+}
+
+.detail-value {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+}
+
+.time-separator {
+  color: #666;
+}
+
+.approval-notice {
+  color: #ff0000;
+  font-size: 14px;
+  margin-top: 20px;
+  text-align: right;
+}
+
+.action-buttons {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.edit-button {
+  display: inline-block;
+  padding: 10px 40px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: opacity 0.3s;
+}
+
+.edit-button:hover {
+  opacity: 0.8;
+}
+
+.error {
+  color: #ff0000;
+  font-size: 14px;  
+  /* display: block; */
+  
+  
+  margin: 0 auto;
+}
+
+/* タブレット (768-850px) */
+@media screen and (min-width: 768px) and (max-width: 850px) {
+  .attendance-detail-container {
+    margin: 30px auto;
+  }
+
+  .page-title {
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+
+  .detail-row {
+    grid-template-columns: 180px 1fr;
+  }
+
+  .detail-label,
+  .detail-value {
+    padding: 15px;
+  }
+
+  .detail-value {
+    font-size: 14px;
+  }
+
+  .edit-button {
+    padding: 8px 30px;
+    font-size: 14px;
+  }
+}
+
+
+
+/* PC (1400-1540px) */
+@media screen and (min-width: 1400px) and (max-width: 1540px) {
+  .attendance-detail-container {
+    max-width: 1200px;
+    margin: 50px auto;
+  }
+
+  .page-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .page-title::before {
+    width: 8px;
+    height: 28px;
+  }
+
+  .detail-row {
+    grid-template-columns: 220px 1fr;
+  }
+
+  .detail-label,
+  .detail-value {
+    padding: 25px;
+    font-size: 16px;
+  }
+
+  .edit-button {
+    padding: 12px 50px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .detail-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .detail-label {
+    border-bottom: 1px solid #eee;
+  }
+}
