@@ -6,7 +6,7 @@
 
 Docker構築
 
-リポジトリをclone 　git clone　git@github.com:kochiyama-h/test3.git
+リポジトリをclone 　git clone　git@github.com:kochiyama-h/test4.git
 
 dockerコンテナを立ち上げる docker-compose up -d
 
