@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\AttendanceRecord;
 use Carbon\Carbon;
 
-class AttendanceTest extends TestCase
+class DateTest extends TestCase
 {
     use RefreshDatabase;
 

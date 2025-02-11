@@ -61,7 +61,7 @@ class AdminUserTest extends TestCase
      *  ユーザーの勤怠情報が正しく表示される
      */ 
     
-     public function test_user_attendance()
+     public function test_user_attendance_date()
      {
 
         // 管理者ユーザー作成（is_admin = 1）
@@ -102,14 +102,90 @@ class AdminUserTest extends TestCase
          $this->actingAs($admin);
  
          // スタッフ一覧ページへアクセス
-         $response = $this->get(route('admin.staff.list'));
-
-         
+         $response = $this->get(route('admin.staff.attendance', ['id' => $user->id]));
 
 
+         $response
+            ->assertSee($currentDate->format('m/d'))
+             ->assertSee('09:00')
+             ->assertSee('18:00')
+             ->assertSee('01:00')
+             ->assertSee('08:00');
 
 
     }
+
+    /**
+     *  「前月」を押下した時に表示月の前月の情報が表示される
+     */ 
+
+     public function test_previous_month()
+    {
+
+     // 管理者ユーザー作成（is_admin = 1）
+     $admin = User::factory()->create([
+        'is_admin' => 1,
+    ]);
+
+    // 一般ユーザー作成（is_admin = 0）
+    $user = User::factory()->create([
+        'name' => 'aaa',
+        'email' => 'aaa@aaa',
+        'is_admin' => 0,
+    ]);
+
+    $previousMonthDate = Carbon::now()->subMonth()->startOfMonth()->addDays(4);
+    
+    // テスト用の勤怠データを作成
+    $attendance = AttendanceRecord::create([
+        'user_id' => $user->id,
+        'date' => $previousMonthDate->format('Y-m-d'),
+        'clock_in' => $previousMonthDate->format('Y-m-d') . ' 09:00:00',
+        'clock_out' => $previousMonthDate->format('Y-m-d') . ' 18:00:00',
+        'status' => 'left',
+    ]);
+
+    // 休憩時間を追加
+    BreakTime::create([
+        'attendance_record_id' => $attendance->id,
+        'start_time' => $previousMonthDate->format('Y-m-d') . ' 12:00:00',
+        'end_time' => $previousMonthDate->format('Y-m-d') . ' 13:00:00',
+    ]);
+
+    $admin = User::factory()->create(['is_admin' => 1])->first();
+
+    $previousMonth = $previousMonthDate->format('Y-m');
+ 
+      // 管理者でログイン
+       $this->actingAs($admin);
+
+        // スタッフ一覧ページへアクセス
+        $response = $this->get(route('admin.staff.attendance', ['id' => $user->id]));
+ 
+      
+
+
+       
+
+       $response
+            ->assertSee($previousMonthDate->format('m/d'))
+             ->assertSee('09:00')
+             ->assertSee('18:00')
+             ->assertSee('01:00')
+             ->assertSee('08:00');
+
+        }
+
+       
+
+
+
+
+     /**
+     *  「翌月」を押下した時に表示月の前月の情報が表示される
+     */ 
+
+    
 }
 
 
