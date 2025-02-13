@@ -41,6 +41,13 @@ Application Keyの作成 　php artisan key:generate
 
 PHPunitテスト
 
+  
+  MySQLコンテナに移動      docker-compose exec mysql bash
+
+  MySQLログイン　　　　　mysql -u root -p
+                 
+ パスワード入力　　　　　root
+
 　MySQLログイン後 　 CREATE DATABASE demo_test;
 
 　phpコンテナ上 　　php artisan migrate --env=testing
