@@ -52,4 +52,8 @@ er図
 
 
 
-       ![ER図](https://github.com/user-attachments/assets/4bd23292-33b5-4884-89f0-92c4e2bd446c)
+<img width="269" alt="ER図" src="https://github.com/user-attachments/assets/7c21b948-c6f5-4120-ad08-4fbc0f7351cb" />
+
+
+
+       
