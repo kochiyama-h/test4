@@ -16,6 +16,20 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
 
+      
+
+
+          //一般ユーザー
+          $param = [
+            'name' => 'user',
+            'email' => 'user@user',
+            'password' => Hash::make('useruser'), // パスワードをハッシュ化
+            'is_admin' => 0,
+            'created_at' => now(),
+            'updated_at' => now()
+          ];
+          DB::table('users')->insert($param);
+
         //管理者ユーザー
         $param = [
                  'name' => 'admin_user',
@@ -29,15 +43,6 @@ class UsersTableSeeder extends Seeder
 
 
 
-         //一般ユーザー
-         $param = [
-            'name' => 'user',
-            'email' => 'user@user',
-            'password' => Hash::make('useruser'), // パスワードをハッシュ化
-            'is_admin' => 0,
-            'created_at' => now(),
-            'updated_at' => now()
-          ];
-          DB::table('users')->insert($param);
+         
     }
 }

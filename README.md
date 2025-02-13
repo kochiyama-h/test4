@@ -46,3 +46,73 @@ PHPunitテスト
 　phpコンテナ上 　　php artisan migrate --env=testing
 
 　テスト実行 　　 ./vendor/bin/phpunit
+
+
+er図
+
+erDiagram
+    USERS ||--o{ ATTENDANCE_RECORDS : has
+    USERS ||--o{ MODIFICATION_REQUESTS : makes
+
+    ATTENDANCE_RECORDS }o--|| USERS : belongs_to
+    ATTENDANCE_RECORDS ||--o{ BREAKS : has
+    ATTENDANCE_RECORDS ||--o{ MODIFICATION_REQUESTS : has
+
+    BREAKS }o--|| ATTENDANCE_RECORDS : belongs_to
+    BREAKS ||--o{ MODIFICATION_REQUESTS : has
+
+    MODIFICATION_REQUESTS }o--|| USERS : belongs_to
+    MODIFICATION_REQUESTS }o--|| ATTENDANCE_RECORDS : belongs_to
+    MODIFICATION_REQUESTS }o--|| BREAKS : targets
+
+    USERS {
+        int id PK
+        string name
+        string email
+        string password
+        boolean is_admin
+        timestamp created_at
+        timestamp updated_at
+    }
+
+    ATTENDANCE_RECORDS {
+        int id PK
+        int user_id FK
+        date date
+        time clock_in
+        time clock_out
+        string status
+        string reason
+        timestamp created_at
+        timestamp updated_at
+    }
+
+    BREAKS {
+        int id PK
+        int attendance_record_id FK
+        time start_time
+        time end_time
+        timestamp created_at
+        timestamp updated_at
+    }
+
+    MODIFICATION_REQUESTS {
+        int id PK
+        int user_id FK
+        int attendance_record_id FK
+        int target_break_id FK
+        date before_date
+        date after_date
+        time before_clock_in
+        time after_clock_in
+        time before_clock_out
+        time after_clock_out
+        time before_break_start
+        time after_break_start
+        time before_break_end
+        time after_break_end
+        string reason
+        string status
+        timestamp created_at
+        timestamp updated_at
+    }

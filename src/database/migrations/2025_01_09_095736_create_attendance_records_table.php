@@ -19,6 +19,7 @@ class CreateAttendanceRecordsTable extends Migration
             $table->datetime('clock_in')->nullable();
             $table->datetime('clock_out')->nullable();
             $table->date('date')->nullable();
+            $table->text('reason')->nullable();
             $table->enum('status', ['not_started', 'working', 'break', 'left'])->nullable();
             $table->timestamps();
         });
