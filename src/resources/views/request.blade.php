@@ -46,7 +46,7 @@
                         <td>{{ $request->reason }}</td>
                         <td>{{ $request->created_at->format('Y/m/d') }}</td>
                         <td>
-                            <a href="{{ route('attendance.detail', $request->id) }}" class="detail-link">
+                            <a href="{{ route('attendance.detail', $request->attendance_record_id) }}" class="detail-link">
                                 詳細
                             </a>
                         </td>
